@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>HTML 综合练习测试页 - 练习.html</title>
+
+    <!-- 外部主题（请在项目文件夹中放置 assets/theme.css）-->
+    <link rel="stylesheet" href="assets/theme.css" onerror="this.remove()" />
+    <!-- 内嵌基础样式（当外部主题缺失时生效） -->
+    <style>
+        :root{--bg:#f7f9fc;--card:#fff;--accent:#0b79d0;--muted:#666}
+        html,body{height:100%;margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;background:var(--bg);color:#111}
+        header{background:linear-gradient(90deg,var(--accent),#3fb);color:#fff;padding:1rem}
+        .container{max-width:1100px;margin:1rem auto;padding:1rem}
+        .grid{display:grid;grid-template-columns:1fr 320px;gap:1rem}
+        .card{background:var(--card);padding:1rem;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+        nav ul{display:flex;gap:.5rem;list-style:none;padding:0;margin:0}
+        nav a{color:inherit;text-decoration:none;padding:.25rem .5rem;border-radius:4px}
+        footer{font-size:.85rem;color:var(--muted);text-align:center;padding:1rem}
+        .small{font-size:.9rem;color:var(--muted)}
+        img.responsive{max-width:100%;height:auto;border-radius:6px}
+        .controls{display:flex;gap:.5rem;flex-wrap:wrap}
+        button,input,select,textarea{font:inherit}
+        pre{background:#0b0b0b;color:#e6e6e6;padding:.5rem;border-radius:6px;overflow:auto}
+    </style>
+
+    <!-- 外部脚本（可放 assets/script.js）-->
+    <script src="assets/script.js" defer onerror="this.remove()"></script>
+
+    <!-- 小脚本：主题切换、示例交互 -->
+    <script>
+        document.addEventListener('DOMContentLoaded',()=> {
+            // 主题切换（如果有外部 theme.css 则覆盖）
+            const btn = document.getElementById('themeToggle');
+            btn?.addEventListener('click',()=>{
+                document.documentElement.classList.toggle('dark');
+            });
+
+            // canvas 简单绘图
+            const c = document.getElementById('demoCanvas');
+            if(c && c.getContext){
+                const ctx = c.getContext('2d');
+                ctx.fillStyle="#0b79d0"; ctx.fillRect(0,0,c.width,c.height);
+                ctx.fillStyle="#fff"; ctx.font="20px sans-serif";
+                ctx.fillText("Canvas 绘图示例",10,40);
+            }
+
+            // dialog polyfill basic
+            const dlg = document.getElementById('sampleDialog');
+            document.getElementById('openDialog')?.addEventListener('click', ()=> dlg.showModal());
+            document.getElementById('closeDialog')?.addEventListener('click', ()=> dlg.close());
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
+            <h1 style="margin:0;font-size:1.25rem">HTML 综合练习测试页</h1>
+            <div>
+                <nav>
+                    <ul aria-label="主导航">
+                        <li><a href="#结构">结构</a></li>
+                        <li><a href="#表单">表单</a></li>
+                        <li><a href="#媒体">媒体</a></li>
+                        <li><a href="#其他">其他</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container grid" role="main">
+        <section class="card" aria-labelledby="结构" id="结构">
+            <h2 id="结构">HTML 基础结构与语义元素</h2>
+            <p class="small">示例包含常见语义标签：article、section、aside、header、footer、nav、figure 等。</p>
+
+            <article>
+                <header><h3>文章示例（article）</h3><p class="small">发布者：练习者 • 2026-01-01</p></header>
+                <figure>
+                    <!-- 参考本地图片文件，请将图片放入 assets/images/ 文件夹 -->
+                    <img src="assets/images/sample.jpg" alt="示例图片（请放置 assets/images/sample.jpg）" class="responsive" />
+                    <figcaption class="small">图注：本地图片示例</figcaption>
+                </figure>
+                <p>这是一个示例段落，展示文本、链接和强调文本。<a href="#" title="示例链接">示例链接</a>，<strong>加粗</strong>, <em>斜体</em>.</p>
+
+                <section aria-labelledby="子节">
+                    <h4 id="子节">子节（section）</h4>
+                    <p>列表示例：</p>
+                    <ul>
+                        <li>有序与无序列表</li>
+                        <li>嵌套列表
+                            <ol>
+                                <li>第一项</li>
+                                <li>第二项</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </section>
+            </article>
+
+            <hr />
+
+            <h3>表格示例（table）</h3>
+            <table border="1" width="100%" cellpadding="6" role="table">
+                <caption class="small">学生成绩表</caption>
+                <thead>
+                    <tr><th>姓名</th><th>语文</th><th>数学</th><th>备注</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>小明</td><td>88</td><td>92</td><td>良好</td></tr>
+                    <tr><td>小红</td><td>95</td><td>98</td><td>优秀</td></tr>
+                </tbody>
+            </table>
+
+            <hr />
+
+            <h3>SVG 示例</h3>
+            <svg width="100%" height="120" viewBox="0 0 300 120" role="img" aria-label="SVG 图形">
+                <rect x="10" y="10" width="280" height="100" rx="12" fill="#0b79d0" opacity="0.1"/>
+                <circle cx="60" cy="60" r="30" fill="#ff8a65"/>
+                <text x="120" y="68" font-size="18" fill="#333">SVG 与 无障碍</text>
+            </svg>
+
+        </section>
+
+        <aside class="card" aria-labelledby="侧边">
+            <h3 id="侧边">侧边：媒体与交互控件</h3>
+
+            <div class="card small">
+                <h4>音频（audio）</h4>
+                <!-- 放置 assets/media/sample.mp3 或 .ogg -->
+                <audio controls preload="none" src="assets/media/sample.mp3">
+                    您的浏览器不支持 audio 标签。请在 assets/media/ 放置 sample.mp3 或 sample.ogg。
+                </audio>
+            </div>
+
+            <div class="card small" style="margin-top:.5rem">
+                <h4>视频（video）</h4>
+                <!-- 放置 assets/media/sample.mp4 或 .webm -->
+                <video controls width="300" poster="assets/images/video-poster.jpg">
+                    <source src="assets/media/sample.mp4" type="video/mp4">
+                    <source src="assets/media/sample.webm" type="video/webm">
+                    您的浏览器不支持 video。
+                </video>
+            </div>
+
+            <div class="card small" style="margin-top:.5rem">
+                <h4>嵌入（iframe）</h4>
+                <!-- 可以将本地页面放置 assets/frame.html -->
+                <iframe src="assets/frame.html" title="本地 iframe 示例" style="width:100%;height:150px;border:1px solid #ddd"></iframe>
+            </div>
+
+            <div class="card small" style="margin-top:.5rem">
+                <h4>媒体画布（canvas）</h4>
+                <canvas id="demoCanvas" width="300" height="90" style="width:100%;border-radius:6px"></canvas>
+            </div>
+        </aside>
+
+        <section class="card" id="表单" aria-labelledby="表单">
+            <h2 id="表单">表单与输入控件</h2>
+            <form action="#" method="post" autocomplete="on" novalidate>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem">
+                    <label>姓名<input type="text" name="name" required placeholder="输入姓名" /></label>
+                    <label>邮箱<input type="email" name="email" placeholder="name@example.com" /></label>
+                </div>
+
+                <p>
+                    <label>生日<input type="date" name="bday" /></label>
+                </p>
+
+                <p>
+                    <label>上传头像（请在本地 assets/uploads/ 文件夹保存）<input type="file" name="avatar" accept="image/*" /></label>
+                </p>
+
+                <fieldset>
+                    <legend>兴趣</legend>
+                    <label><input type="checkbox" name="hobby" value="code" /> 编程</label>
+                    <label><input type="checkbox" name="hobby" value="music" /> 音乐</label>
+                    <label><input type="radio" name="level" value="beginner" checked /> 初学者</label>
+                    <label><input type="radio" name="level" value="pro" /> 进阶</label>
+                </fieldset>
+
+                <p>
+                    <label>国家/地区
+                        <select name="country">
+                            <option value="">请选择</option>
+                            <option>中国</option><option>美国</option><option>其他</option>
+                        </select>
+                    </label>
+                </p>
+
+                <p>
+                    <label>留言<textarea name="message" rows="4" cols="40" placeholder="写点什么..."></textarea></label>
+                </p>
+
+                <div class="controls">
+                    <button type="submit">提交</button>
+                    <button type="reset">重置</button>
+                    <button type="button" id="openDialog">打开对话框（dialog）</button>
+                    <button type="button" id="themeToggle">切换主题</button>
+                </div>
+            </form>
+
+            <dialog id="sampleDialog" class="card" aria-labelledby="dlgTitle" style="padding:1rem">
+                <h3 id="dlgTitle">对话框示例</h3>
+                <p>这是一个 HTML dialog 元素示例。</p>
+                <div style="text-align:right">
+                    <button id="closeDialog">关闭</button>
+                </div>
+            </dialog>
+
+            <hr />
+
+            <h3>进度与计量</h3>
+            <label>进度：<progress value="35" max="100">35%</progress></label>
+            <label style="margin-left:1rem">度量：<meter value="0.7">70%</meter></label>
+        </section>
+
+        <section class="card" id="媒体" aria-labelledby="媒体">
+            <h2 id="媒体">多媒体与可访问性</h2>
+
+            <h3>响应式图片（picture）</h3>
+            <picture>
+                <source srcset="assets/images/sample-large.webp" type="image/webp" media="(min-width:800px)">
+                <source srcset="assets/images/sample-small.jpg" type="image/jpeg">
+                <img src="assets/images/sample-small.jpg" alt="响应式示例图片" class="responsive" />
+            </picture>
+
+            <h3>可访问性示例</h3>
+            <p>使用 aria-label、role、alt、caption 等增强无障碍支持。</p>
+
+            <h3>拖放与可编辑内容</h3>
+            <div draggable="true" style="padding:.5rem;border:1px dashed #ccc;border-radius:6px">可拖动元素（拖到下方放置区）</div>
+            <div id="dropZone" style="min-height:60px;border:1px dashed #999;margin-top:.5rem;padding:.5rem;border-radius:6px">放置区</div>
+
+            <p contenteditable="true" style="border:1px solid #eee;padding:.5rem;border-radius:6px">这是一个可编辑区域（contenteditable）。你可以直接编辑这段文本。</p>
+
+            <script>
+                // 简单拖放事件
+                const dragEl = document.querySelector('[draggable="true"]');
+                const drop = document.getElementById('dropZone');
+                dragEl?.addEventListener('dragstart', e=> e.dataTransfer.setData('text/plain','已拖动'));
+                drop?.addEventListener('dragover', e=> e.preventDefault());
+                drop?.addEventListener('drop', e=> { e.preventDefault(); drop.textContent = '已放置：' + e.dataTransfer.getData('text/plain'); });
+            </script>
+        </section>
+
+        <section class="card" id="其他" aria-labelledby="其他">
+            <h2 id="其他">其他 HTML5 功能与示例</h2>
+            <h3>模板与克隆（template）</h3>
+            <template id="tplCard">
+                <div class="card" style="margin-top:.5rem"><h4>模板卡片</h4><p class="small">由 template 克隆生成。</p></div>
+            </template>
+            <div id="tplContainer"></div>
+            <button id="addTpl">添加模板卡片</button>
+            <script>
+                document.getElementById('addTpl')?.addEventListener('click',()=>{
+                    const tpl = document.getElementById('tplCard');
+                    const node = tpl.content.cloneNode(true);
+                    document.getElementById('tplContainer').appendChild(node);
+                });
+            </script>
+
+            <h3>微数据示例（schema.org）</h3>
+            <div itemscope itemtype="http://schema.org/Article">
+                <meta itemprop="author" content="练习者">
+                <span itemprop="name">示例文章结构化数据</span>
+            </div>
+
+            <h3>离线与 manifest 提示</h3>
+            <p class="small">可添加 service worker 或 manifest.json 放入项目以离线支持（此处仅提示）。</p>
+
+            <h3>可打印样式示例</h3>
+            <p class="small">当打印页面时可使用 @media print 在外部 theme.css 中定义样式。</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="small">说明：请将示例资源放入以下建议目录以正常演示：</p>
+            <pre class="small">assets/
+    images/
+        sample.jpg
+        sample-small.jpg
+        sample-large.webp
+        video-poster.jpg
+    media/
+        sample.mp3
+        sample.mp4
+    uploads/
+    theme.css
+    script.js
+    frame.html</pre>
+            <p>练习页已生成 — 可根据需要替换或扩展本地资源。</p>
+        </div>
+    </footer>
+</body>
+</html>
