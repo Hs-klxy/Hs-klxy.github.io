@@ -1,0 +1,300 @@
+
+@font-face {
+    /*中文支持苹果字体*/
+    font-family: 'SF-Chinese';
+    src: url('../San\ Francisco\ Fonts/SF Pro/Windows/segoeui.ttf') format('ttf');
+}
+
+audio {
+    display: none;
+}
+
+.h1-forData {
+    margin: 20px auto 10px 20px;
+    text-align: center;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+h1 {
+    margin: 20px auto 10px auto;
+    text-align: center;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+h2 {
+    margin: 0px 0px 0px 0px;
+    text-align: left;
+    word-wrap: break-word;
+    word-break: break-all;
+    padding-top: 0px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    margin: auto;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: rgb(0, 157, 255);
+    text-decoration: none;
+}
+
+hr {
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 61.8%;
+    height: 2px;
+    margin: 20px auto 0 10px;
+    border-radius: 2px;
+    border-width: 0;
+}
+
+p {
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0px 5px 0 5px;
+    text-align: left;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+body {
+    background-color: aliceblue;
+    background-image: url("/img/background.jpg");
+    
+    
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: cover; /* 关键：等比例缩放，覆盖整个容器，可能裁剪边缘 */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: block;
+    margin: auto;
+    flex-grow: 1;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: auto;
+    height: auto;
+    border-radius: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(30px);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: white;
+    font-family: "SF-Chinese", sans-serif;
+    
+}
+
+.circle-button {
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: height 0.3s, width 0.3s, background-color 0.3s;
+    cursor: pointer;
+}
+.circle-button:hover {
+    background-color: rgba(0, 157, 255, 0.5);
+    height: 50px;
+    width: 50px;
+}
+
+.invisible-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.flex-container {
+            border-color: red;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            border-width: 2px;
+            border-style: solid;
+            width: 90%;
+            height: 90%;
+            gap: 20px;
+            
+            
+}
+
+.data-container {
+    height: 50px; 
+    margin-top: 10px;
+    margin-left: 0px;
+    align-items: center;
+}
+
+.bottom-bar {
+    border-color: red;
+    margin: auto;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    justify-content: flex-start;
+    bottom: 10px;
+    border-width: 2px;
+    border-style: solid;
+    width: 50%;
+    height: 50px;
+}
+
+.circle {
+            
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.liquid-glass {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(3px);
+    color: white;
+}
+
+.imageSize {
+    width: 23px;
+    height: 23px;   
+}
+
+.setImgToCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.setMarginToCenter {
+    margin: auto;
+}
+
+.userImg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.settingsImg {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.inputField {
+    width: 70%;
+    height: 30px;
+    border-radius: 15px;
+    border: none;
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+.searchButton {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.searchSize {
+    width: 20px;
+    height: 20px;
+}
+
+.tagbar {
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.a-tag {
+    color: white;
+    text-decoration: none;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    height: 10px;
+    transition: color 0.3s;
+}
+
+.a-tag:hover {
+    color: rgb(0, 157, 255);
+    text-decoration: none;
+}
+
+.full-button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    line-height: 50px;
+}
+
+.bottom-bar-part {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}
+
+.a-tag-bottom {
+    color: white;
+    text-decoration: none;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-top: 8px;
+    height: 10px;
+    transition: color 0.3s;
+}
+
+.a-tag-bottom:hover {
+    color: rgb(0, 157, 255);
+    text-decoration: none;
+}
+
+.imgIna-tag-bottom {
+    width: 23px;
+    height: 23px;
+    transition: color 0.3s, height 0.3s, width 0.3s;
+}
+
+.imgIna-tag-bottom:hover {
+    width: 30px;
+    height: 30px;
+}
+
+.bottom-data-container {
+    height: 60px;
+    width: 90%;
+    margin: 20px auto 70px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
