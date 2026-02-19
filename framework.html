@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    
+    <title>Framework</title>
+    <style>
+        
+
+        .smallSize {
+            height: 900px;
+            width: 25%;
+            min-width: 300px;
+        }
+
+        .bigSize {
+            height: 900px;
+            width: 65%;
+            min-width: 700px;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="/music-lofi/Cruisin Along-David Renda.mp3" type="audio/mpeg">
+        <source src="/music-lofi/Done With Work-David Renda.mp3" type="audio/mpeg">
+        <source src="/music-lofi/I Got This-David Renda.mp3" type="audio/mpeg">
+        <source src="/music-lofi/On My Own-David Renda.mp3" type="audio/mpeg">
+        <source src="/music-lofi/Steady Enjoyment-David Renda.mp3" type="audio/mpeg">
+    </audio>
+    <div class="flex-container setMarginToCenter">
+        <div class="card smallSize setMarginToCenter">
+            <h1>📋 信息</h1>
+            <hr>
+            
+            <div class="flex-container card data-container" style="margin-bottom: 0px;">
+                <img src="/img/myImage.png" alt="Image" class="userImg" style="width: 40px;">
+                <div>
+                    <h2>username</h2>
+                    <p style="font-size: smaller; opacity: 0.7;">user or designer</p>
+                </div>
+                
+                
+            </div>
+            <p style="margin:5px auto 5px 7px"><i>uid:</i></p>
+            <p style="margin:5px auto 5px 7px">个性签名:</p>
+            
+            <hr>
+            
+            <div class="flex-container">
+                <h2>此文章标签:</h2>
+                <div style="width: 100%;word-wrap: break-word;word-break: break-all;">
+                    <a href="#top" class="a-tag">#标签1</a>
+                    <a href="#top" class="a-tag">#标签2</a>
+                    <a href="#top" class="a-tag">#标签3</a>
+                    <a href="#top" class="a-tag">#标签434</a>
+                    <a href="#top" class="a-tag">#标签5</a>
+                    <a href="#top" class="a-tag">#标签6</a>
+                    <a href="#top" class="a-tag">#标签7</a>
+
+                </div>
+                
+            </div>
+            
+
+        </div>
+            
+            <div class="card bigSize setMarginToCenter">
+                <h1>等待投放内容</h1>
+            </div>
+        
+    </div>
+    <div class="card bottom-data-container">
+        <p style="color: rgba(255, 255, 255, 0.3);">© 2026 CNIHs_klxy123 σ's hub. All rights reserved.</p>
+        <p>所有图标(我的头像除外)均引用自igoutu.cn，感谢! ：图标 <a target="_blank" href="https://icons8.com">Icons8</a></p>
+    </div>
+    
+    
+    <div class="bottom-bar">
+        <button type="button" class="circle-button circle liquid-glass setImgToCenter setMarginToCenter" style="margin: auto 5px auto auto;"><img src="/img/myImage.png" alt="Image" class="imageSize"></button>
+        <script>
+            const button = document.querySelector('.circle-button');
+            button.addEventListener('click', () => {
+                window.location.href = 'https://www.bilibili.com/video/BV1Zt4y1C7sK?spm_id_from=..0.0';
+            });
+        </script>
+        <div class="card liquid-glass bottom-bar-part flex-container" style="margin: auto auto auto 5px;height: 40px;width: 300px;flex-direction: row;align-items: center;">
+            <a href="#top" class="a-tag-bottom"><img src="/img/small-card/home.png" alt="Image" class="imgIna-tag-bottom"></a>
+            <a href="#top" class="a-tag-bottom"><img src="/img/small-card/search.png" alt="Image" class="imgIna-tag-bottom"></a>
+            <a href="#top" class="a-tag-bottom"><img src="/img/small-card/blog.png" alt="Image" class="imgIna-tag-bottom"></a>
+            <a href="#top" class="a-tag-bottom"><img src="/img/small-card/settings.png" alt="Image" class="imgIna-tag-bottom"></a>
+            <a href="#top" class="a-tag-bottom"><img src="/img/small-card/information.png" alt="Image" class="imgIna-tag-bottom"></a>
+            
+    </div>
+</body>
+</html>
