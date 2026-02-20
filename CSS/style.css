@@ -133,7 +133,6 @@ body {
 }
 
 .bottom-bar {
-    border-color: red;
     margin: auto;
     left: 0;
     right: 0;
@@ -142,8 +141,6 @@ body {
     position: fixed;
     justify-content: flex-start;
     bottom: 10px;
-    border-width: 2px;
-    border-style: solid;
     width: 50%;
     height: 50px;
 }
